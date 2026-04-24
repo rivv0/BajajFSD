@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hierarchy Builder</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="panel">
+      <div class="panel-head">
+        <h1>Hierarchy Builder</h1>
+      </div>
+      <textarea id="input" spellcheck="false">A->B
+A->C
+B->D
+C->E
+E->F
+X->Y
+Y->Z
+Z->X
+P->Q
+Q->R
+G->H
+G->H
+G->I
+hello
+1->2
+A-></textarea>
+      <div class="actions">
+        <button id="submit">Submit</button>
+        <button id="load-example" class="ghost">Load Example</button>
+      </div>
+      <p id="error" class="error" hidden></p>
+    </section>
+
+    <section class="results">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Summary</h2>
+        </div>
+        <div id="summary" class="summary-grid"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Hierarchies</h2>
+        </div>
+        <div id="hierarchies" class="hierarchies"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Diagnostics</h2>
+        </div>
+        <div class="diagnostics">
+          <div>
+            <h3>Invalid entries</h3>
+            <ul id="invalid-entries"></ul>
+          </div>
+          <div>
+            <h3>Duplicate edges</h3>
+            <ul id="duplicate-edges"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
